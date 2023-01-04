@@ -1,0 +1,102 @@
+[
+  {
+    "_id": "7f535dc2-8d39-4002-bda4-939dfb5c9ed5",
+    "colId": "52a9f055-6590-4238-955e-ba2304736861",
+    "containerId": "",
+    "name": "get properties",
+    "url": "{{url}}/items/properties?fields=*,files.directus_files_id",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2022-11-21T12:56:47.964Z",
+    "modified": "2022-11-29T09:14:42.279Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "fields",
+        "value": "*,files.directus_files_id",
+        "isPath": false
+      }
+    ],
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdiOWZiZTQ3LTk3ZGItNDFlOC1hMzhkLWQ5Zjg5Y2IzNmJlNiIsInJvbGUiOiIwMDkwZGY1YS04ZTg3LTQ4ODAtYmRhYS02ODQ2OThjOWEzYTAiLCJhcHBfYWNjZXNzIjoxLCJhZG1pbl9hY2Nlc3MiOjEsImlhdCI6MTY2OTcxMjUyOCwiZXhwIjoxNjY5NzE2MTI4LCJpc3MiOiJkaXJlY3R1cyJ9.x2si65A1L114K4XrEN0Mmpncry8WD-s-T0QbPywEccA"
+    },
+    "tests": []
+  },
+  {
+    "_id": "b61a06c0-d1a6-44d6-9404-8f8a14a341ee",
+    "colId": "52a9f055-6590-4238-955e-ba2304736861",
+    "containerId": "",
+    "name": "login",
+    "url": "{{url}}/auth/login",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2022-11-28T11:47:40.830Z",
+    "modified": "2022-11-28T11:49:39.362Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\":\"pandaadmin@gmail.com\",\n  \"password\":\"b1201b1200\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "42b4a2c1-e257-4e7b-b795-b7b1312ca80b",
+    "colId": "52a9f055-6590-4238-955e-ba2304736861",
+    "containerId": "",
+    "name": "logout",
+    "url": "{{url}}/auth/logout",
+    "method": "POST",
+    "sortNum": 30000,
+    "created": "2022-11-29T09:11:44.637Z",
+    "modified": "2022-11-29T09:15:10.133Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"refresh_token\":\"R08nX4T_yHgpLCvNEOrX-ge4LY7Lb5APWltNbyqNA6ETLUuX66dT2YvFz1j1C024\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "07935ec8-b326-4c29-b83b-6522525f2e49",
+    "colId": "52a9f055-6590-4238-955e-ba2304736861",
+    "containerId": "",
+    "name": "register",
+    "url": "{{url}}/users",
+    "method": "POST",
+    "sortNum": 40000,
+    "created": "2022-11-30T01:51:16.155Z",
+    "modified": "2022-11-30T01:51:45.840Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\":\"ksuapdc@gmail.com\",\n  \"password\":\"123\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "b8d472bb-bd4f-4cce-9659-f02e80392c62",
+    "colId": "52a9f055-6590-4238-955e-ba2304736861",
+    "containerId": "",
+    "name": "check email",
+    "url": "{{url}}/flows/trigger/edf1084d-676b-4b15-84ec-eb6fdcb41d1a",
+    "method": "POST",
+    "sortNum": 50000,
+    "created": "2022-11-30T02:02:30.251Z",
+    "modified": "2022-11-30T03:14:22.431Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\":\"ksuapdc@gmail.com\"\n}",
+      "form": []
+    },
+    "tests": []
+  }
+]
