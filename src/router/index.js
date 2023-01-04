@@ -1,6 +1,5 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
 import landing from "@/views/landing/index.vue";
 import page404 from "@/views/404.vue";
 import { authenticated } from "@/api/guard";
@@ -76,8 +75,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    component: () => import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
   {
     path: "/404",
@@ -100,8 +98,7 @@ router.beforeEach(async (to, from, next) => {
   window.scrollTo(0, 0);
   const auth = await authenticated();
   console.log(auth);
-  if (to.meta.requireAuth && to.name !== "login" && !auth)
-    next({ name: "login" });
+  if (to.meta.requireAuth && to.name !== "login" && !auth) next({ name: "login" });
   next();
 });
 

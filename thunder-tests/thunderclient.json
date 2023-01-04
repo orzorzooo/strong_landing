@@ -3,24 +3,14 @@
     "_id": "7f535dc2-8d39-4002-bda4-939dfb5c9ed5",
     "colId": "52a9f055-6590-4238-955e-ba2304736861",
     "containerId": "",
-    "name": "get properties",
-    "url": "{{url}}/items/properties?fields=*,files.directus_files_id",
+    "name": "get projects",
+    "url": "{{url}}/api/landingpage",
     "method": "GET",
     "sortNum": 10000,
     "created": "2022-11-21T12:56:47.964Z",
-    "modified": "2022-11-29T09:14:42.279Z",
+    "modified": "2023-01-04T13:12:27.891Z",
     "headers": [],
-    "params": [
-      {
-        "name": "fields",
-        "value": "*,files.directus_files_id",
-        "isPath": false
-      }
-    ],
-    "auth": {
-      "type": "bearer",
-      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdiOWZiZTQ3LTk3ZGItNDFlOC1hMzhkLWQ5Zjg5Y2IzNmJlNiIsInJvbGUiOiIwMDkwZGY1YS04ZTg3LTQ4ODAtYmRhYS02ODQ2OThjOWEzYTAiLCJhcHBfYWNjZXNzIjoxLCJhZG1pbl9hY2Nlc3MiOjEsImlhdCI6MTY2OTcxMjUyOCwiZXhwIjoxNjY5NzE2MTI4LCJpc3MiOiJkaXJlY3R1cyJ9.x2si65A1L114K4XrEN0Mmpncry8WD-s-T0QbPywEccA"
-    },
+    "params": [],
     "tests": []
   },
   {

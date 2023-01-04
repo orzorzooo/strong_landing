@@ -3,7 +3,7 @@
     <Hero></Hero>
     <About></About>
     <Feature></Feature>
-    <Objects></Objects>
+    <!-- <Objects></Objects> -->
   </div>
 </template>
 

@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/footer.vue";
 export default {
@@ -35,5 +36,11 @@ export default {
   data: () => ({
     //
   }),
+  methods: {
+    ...mapActions("landing", ["getLandingDatas"]),
+  },
+  async created() {
+    const getLandingDatas = await this.getLandingDatas();
+  },
 };
 </script>

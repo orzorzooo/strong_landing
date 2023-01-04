@@ -1,81 +1,45 @@
 <template>
-  <div
-    ref="navbar"
-    class="transition fixed w-full z-60 bg-gray-100 bg-opacity-0 text-white"
-  >
+  <div ref="navbar" class="transition fixed w-full z-60 bg-gray-100 bg-opacity-0 text-white">
     <!-- standard -->
     <div class="h-20">
-      <div
-        class="flex h-full px-20 justify-between items-center"
-        v-if="$vuetify.breakpoint.mdAndUp"
-      >
+      <div class="flex h-full px-20 justify-between items-center" v-if="$vuetify.breakpoint.mdAndUp">
         <NavItem :routeName="'landing'"
-          ><div class="text-2xl font-bold">PANDA</div></NavItem
+          ><div class="text-2xl font-bold">{{ landingDatas ? landingDatas.CompanyName : "" }}</div></NavItem
         >
         <v-spacer></v-spacer>
-        <NavItem :routeName="'rc'"
-          ><div class="text-2xl font-bold">輕鋼構</div></NavItem
-        >
-        <NavItem :routeName="'login'" v-if="!user"
-          ><div class="text-2xl font-bold">登入</div></NavItem
-        >
-        <NavItem v-else :routeName="'login'"
-          ><div class="text-2xl font-bold" @click="logout">登出</div></NavItem
-        >
+        <NavItem :routeName="'rc'"><div class="text-2xl font-bold">輕鋼構</div></NavItem>
+        <NavItem :routeName="'login'" v-if="!user"><div class="text-2xl font-bold">登入</div></NavItem>
+        <NavItem v-else :routeName="'login'"><div class="text-2xl font-bold" @click="logout">登出</div></NavItem>
       </div>
 
       <!-- MOBILE -->
 
       <div v-else class="flex h-full w-full px-5 items-center">
         <NavItem :routeName="'landing'"
-          ><div class="text-2xl font-bold">PANDA</div></NavItem
+          ><div class="text-2xl font-bold">{{ landingDatas ? landingDatas.CompanyName : "" }}</div></NavItem
         >
         <v-spacer></v-spacer>
-        <v-app-bar-nav-icon
-          :dark="!scroll"
-          class=""
-          @click="drawer = true"
-        ></v-app-bar-nav-icon>
+        <v-app-bar-nav-icon :dark="!scroll" class="" @click="drawer = true"></v-app-bar-nav-icon>
       </div>
       <v-navigation-drawer v-model="drawer" right absolute dark height="100vh">
         <div class="w-full py-10">
           <v-list>
             <v-list-item link>
-              <NavItem :routeName="'landing'"
-                ><div class="text-xl font-bold text-orange-200/70">
-                  首頁
-                </div></NavItem
-              >
+              <NavItem :routeName="'landing'"><div class="text-xl font-bold text-orange-200/70">首頁</div></NavItem>
             </v-list-item>
             <v-list-item link>
-              <NavItem :routeName="'rc'"
-                ><div class="text-xl font-bold text-orange-200/70">
-                  輕鋼構
-                </div></NavItem
-              >
+              <NavItem :routeName="'rc'"><div class="text-xl font-bold text-orange-200/70">輕鋼構</div></NavItem>
             </v-list-item>
             <v-list-item link v-if="user">
-              <NavItem :routeName="'home'"
-                ><div class="text-xl font-bold text-orange-200/70">
-                  我的物件
-                </div></NavItem
-              >
+              <NavItem :routeName="'home'"><div class="text-xl font-bold text-orange-200/70">我的物件</div></NavItem>
             </v-list-item>
             <v-divider dark class="mb-5"></v-divider>
             <v-list-item v-if="!user">
-              <NavItem :routeName="'login'"
-                ><div class="text-xl font-bold text-orange-200/70">
-                  登入
-                </div></NavItem
-              >
+              <NavItem :routeName="'login'"><div class="text-xl font-bold text-orange-200/70">登入</div></NavItem>
             </v-list-item>
 
             <v-list-item v-else @click.prevent="logout">
-              <NavItem :routeName="'login'"
-                ><div class="text-xl font-bold text-orange-200/70">
-                  登出
-                </div></NavItem
-              >
+              <NavItem :routeName="'login'"><div class="text-xl font-bold text-orange-200/70">登出</div></NavItem>
             </v-list-item>
           </v-list>
         </div>
@@ -114,6 +78,7 @@ export default {
   },
   computed: {
     ...mapGetters("user", ["user"]),
+    ...mapGetters("landing", ["landingDatas"]),
   },
   mounted() {
     const _this = this;
